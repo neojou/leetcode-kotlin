@@ -52,7 +52,7 @@ fun matrixReshape(mat: Array<IntArray>, r: Int, c: Int): Array<IntArray> {
     var index = 0
     for (i in mat.indices) {
         for (j in mat[0].indices) {
-            nums[index] = mat[i][j]
+            nums[index++] = mat[i][j]
         }
     }
 
