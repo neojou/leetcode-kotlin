@@ -30,8 +30,8 @@ fun middleNode(head: ListNode?): ListNode? {
     var sp = head
     var fp = head?.next
     while (fp != null) {
-        sp = sp?.next
-        fp = fp?.next?.next
+        sp = sp!!.next
+        fp = fp!!.next?.next
     }
     return sp
 }
