@@ -8,18 +8,18 @@ import java.util.EmptyStackException
 class Solution {
     fun floodFill(image: Array<IntArray>, sr: Int, sc: Int, color: Int) : Array<IntArray> {
         val oc = image[sr][sc]
-        helper(image, sr, sc, color, oc)
+        dfs(image, sr, sc, color, oc)
         return image
     }
 
-    private fun helper(image: Array<IntArray>, sr: Int, sc: Int, nc: Int, oc: Int) {
+    private fun dfs(image: Array<IntArray>, sr: Int, sc: Int, nc: Int, oc: Int) {
         if (sr >= image.size || sc >= image[0].size || sr < 0 || sc < 0 || image[sr][sc] == nc || image[sr][sc] != oc)
             return
         image[sr][sc] = nc
-        helper(image, sr + 1, sc, nc, oc)
-        helper(image, sr - 1, sc, nc, oc)
-        helper(image, sr, sc + 1, nc, oc)
-        helper(image, sr, sc - 1, nc, oc)
+        dfs(image, sr + 1, sc, nc, oc)
+        dfs(image, sr - 1, sc, nc, oc)
+        dfs(image, sr, sc + 1, nc, oc)
+        dfs(image, sr, sc - 1, nc, oc)
     }
 }
 
@@ -40,5 +40,4 @@ fun main() {
         println("]")
     }
 }
-
 
